@@ -11,11 +11,9 @@ public class ConstrutorDriver {
 	private ConfiguracoesPropriedades configuracoes;
 
 	public ConstrutorDriver() {
-		configuracoes = new ConfiguracoesPropriedades();
-		
+		configuracoes = new ConfiguracoesPropriedades();		
 		System.setProperty("webdriver.chrome.driver", configuracoes.getDriverPath());
 		driver = new ChromeDriver();
-		driver.manage().window().maximize();
 	}
 
 	public WebDriver getDriver() {

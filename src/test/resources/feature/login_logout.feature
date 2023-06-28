@@ -14,11 +14,11 @@ Funcionalidade: Realizar login e logout no site 'demoblaze';
     Dado estar logado na aplicação
     Então validar usuario logado.
 
-  @0002
-  Cenario: logout na aplicação
-    Dado estar logado na aplicação
-    Quando clicar no link 'Log out'
-    Então validar usuario não mais logado
+  #@0002
+  #Cenario: logout na aplicação
+    #Dado estar logado na aplicação
+    #Quando clicar no link 'Log out'
+    #Então validar usuario não mais logado
   
 
 

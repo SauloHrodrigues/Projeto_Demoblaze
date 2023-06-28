@@ -19,6 +19,9 @@ public class HomePage {
 	@FindBy(id = "login2")
 	private WebElement linkLogIn;
 
+	@FindBy(id = "logout2")
+	private WebElement linkLogOut;
+
 	@FindBy(id = "signin2")
 	private WebElement linkSingUp;
 
@@ -54,4 +57,11 @@ public class HomePage {
 	public WebElement getLinkNomeUser() {
 		return linkNomeUser;
 	}
+
+
+	public WebElement getLinkLogOut() {
+		return linkLogOut;
+	}
+	
+	
 }

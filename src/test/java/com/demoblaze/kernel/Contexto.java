@@ -1,6 +1,7 @@
 package com.demoblaze.kernel;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.demoblaze.kernel.driver.ConstrutorDriver;
 import com.demoblaze.kernel.utils.IdCenariosUtils;
@@ -15,7 +16,7 @@ public class Contexto {
 
 	public static void inicializar(Scenario scenario) {
 		setConstrutorDriver();
-		setIdCenario(scenario);
+//		setIdCenario(scenario);
 		
 	}
 
@@ -25,6 +26,7 @@ public class Contexto {
 
 	public static WebDriver getDriver() {
 		return construtorDriver.getDriver();
+
 	}
 
 	private static void setIdCenario(Scenario cenario) {
