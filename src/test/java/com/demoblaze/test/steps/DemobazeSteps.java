@@ -17,7 +17,7 @@ public class DemobazeSteps {
 
 	@Quando("^clicar no link 'Log in'$")
 	public void clicarNoLinkLogIn() throws Throwable {
-	   
+	   form.clicarLogIn();
 	}
 
 	@Quando("^preencher a caixa 'Username'$")

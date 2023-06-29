@@ -1,7 +1,6 @@
 package com.demoblaze.kernel;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.demoblaze.kernel.driver.ConstrutorDriver;
 import com.demoblaze.kernel.utils.IdCenariosUtils;

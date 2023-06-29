@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
+	
 	@FindBy(xpath = "//a[@#exampleModal']")
 	private WebElement linkContact;
 	
@@ -58,10 +59,8 @@ public class HomePage {
 		return linkNomeUser;
 	}
 
-
 	public WebElement getLinkLogOut() {
 		return linkLogOut;
 	}
-	
 	
 }
