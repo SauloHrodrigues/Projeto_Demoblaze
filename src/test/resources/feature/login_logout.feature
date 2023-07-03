@@ -1,4 +1,5 @@
 # language: pt
+@loginLogout
 Funcionalidade: Realizar login e logout no site 'demoblaze';
 
   
@@ -9,10 +10,10 @@ Funcionalidade: Realizar login e logout no site 'demoblaze';
     E prencher a caixa de texto 'Password'
     E clicar no botão 'Log in'
     
-  #@0001
-  #Cenario: login na aplicação
-    #Dado estar logado na aplicação
-    #Então validar usuario logado.
+  @0001
+  Cenario: login na aplicação
+    Dado estar logado na aplicação
+    Então validar usuario logado.
 
   @0002
   Cenario: logout na aplicação

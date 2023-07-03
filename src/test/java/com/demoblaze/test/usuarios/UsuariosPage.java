@@ -1,4 +1,4 @@
-package com.demoblaze.test.pages;
+package com.demoblaze.test.usuarios;
 
 import static com.demoblaze.kernel.Contexto.getDriver;
 

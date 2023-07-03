@@ -1,6 +1,4 @@
-package com.demoblaze.test.steps;
-
-import com.demoblaze.test.logic.FormularioLogic;
+package com.demoblaze.test.login_logout;
 
 import cucumber.api.java.it.Quando;
 import cucumber.api.java.pt.Dado;
@@ -8,12 +6,7 @@ import cucumber.api.java.pt.Então;
 
 public class LoginLogoutSteps {
 	
-	private FormularioLogic form = new FormularioLogic();
-	
-	@Dado("^estar no site 'https://www\\.demoblaze\\.com'$")
-	public void estarNoSiteHttpsWwwDemoblazeCom() throws Throwable {
-	   form.acessarSite();
-	}
+	private LoginLogoutLogic form = new LoginLogoutLogic();
 
 	@Quando("^clicar no link 'Log in'$")
 	public void clicarNoLinkLogIn() throws Throwable {

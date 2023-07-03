@@ -1,15 +1,12 @@
-package com.demoblaze.test.logic;
+package com.demoblaze.test.login_logout;
 
 import static com.demoblaze.kernel.Contexto.browserWeb;
-import static com.demoblaze.kernel.Contexto.getDriver;
 
 import org.junit.Assert;
 
-import com.demoblaze.kernel.readers.ConfiguracoesPropriedades;
-import com.demoblaze.test.logic.login.Login;
-import com.demoblaze.test.pages.PageManager;
+import com.demoblaze.test.utilitarios_test.page.PageManager;
 
-public class FormularioLogic {
+public class LoginLogoutLogic {
 
 	
 	private PageManager pages;
@@ -17,15 +14,17 @@ public class FormularioLogic {
 	private String senhaUsuario;
 
 	
-	public FormularioLogic() {
+	public LoginLogoutLogic() {
 		pages = new PageManager();
 
 	}
 	
 	
-	public void acessarSite() {
-		ConfiguracoesPropriedades config = new ConfiguracoesPropriedades();
-		getDriver().get(config.getUrl());
+	public void logar(String nomeUsuario, String senhaUsuario) {
+		browserWeb().toWriter(pages.loginPage().getTxtUsername(), nomeUsuario);
+		browserWeb().toWriter(pages.loginPage().getTxtPassword(), senhaUsuario );
+		browserWeb().toClick(pages.loginPage().getBtnLogin());
+		browserWeb().toHoperElementVisibility(pages.homePage().getLinkNomeUser());
 	}
 
 	public void clicarAbout() {
@@ -57,7 +56,7 @@ public class FormularioLogic {
 	}
 
 	public void clicarBotaoLogin() {	
-		new Login().logar(nomeUsuario, senhaUsuario, pages);
+		logar(nomeUsuario, senhaUsuario);
 	}
 	
 	public void validarLogin() {

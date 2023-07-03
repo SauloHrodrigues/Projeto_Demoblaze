@@ -1,4 +1,7 @@
-package com.demoblaze.test.pages;
+package com.demoblaze.test.utilitarios_test.page;
+
+import com.demoblaze.test.login_logout.LoginPage;
+import com.demoblaze.test.usuarios.UsuariosPage;
 
 public class PageManager {
 	private HomePage home;
