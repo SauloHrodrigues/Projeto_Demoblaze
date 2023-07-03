@@ -3,7 +3,7 @@ package com.demoblaze.test.pages;
 public class PageManager {
 	private HomePage home;
 	private LoginPage login;
-
+	private UsuariosPage usuariosPage;
 
 	public HomePage homePage() {
 		
@@ -21,7 +21,10 @@ public class PageManager {
 		return login;
 	}
 	
-	
-	
-	
+	public UsuariosPage usuariosPage() {
+		if(usuariosPage == null) {
+			this.usuariosPage = new UsuariosPage();
+		}
+		return usuariosPage;
+	}
 }
