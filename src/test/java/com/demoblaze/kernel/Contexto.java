@@ -3,6 +3,7 @@ package com.demoblaze.kernel;
 import org.openqa.selenium.WebDriver;
 
 import com.demoblaze.kernel.driver.ConstrutorDriver;
+import com.demoblaze.kernel.driver.InterationBrowser;
 import com.demoblaze.kernel.utils.IdCenariosUtils;
 
 import cucumber.api.Scenario;
@@ -12,6 +13,7 @@ public class Contexto {
 
 	private static ConstrutorDriver construtorDriver;
 	private static IdCenariosUtils idCenariosUtils;
+	private static InterationBrowser browser;
 
 	public static void inicializar(Scenario scenario) {
 		setConstrutorDriver();
@@ -28,6 +30,13 @@ public class Contexto {
 
 	}
 
+	public static InterationBrowser browserWeb() {
+		if(browser == null) {
+			browser = new InterationBrowser();
+		}
+		return browser;
+	}
+	
 	private static void setIdCenario(Scenario cenario) {
 		idCenariosUtils = new IdCenariosUtils(cenario);
 	}

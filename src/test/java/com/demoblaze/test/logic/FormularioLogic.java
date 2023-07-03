@@ -1,23 +1,24 @@
 package com.demoblaze.test.logic;
 
+import static com.demoblaze.kernel.Contexto.browserWeb;
 import static com.demoblaze.kernel.Contexto.getDriver;
 
-import com.demoblaze.kernel.driver.InterationBrowser;
+import org.junit.Assert;
+
 import com.demoblaze.kernel.readers.ConfiguracoesPropriedades;
-import com.demoblaze.test.pages.HomePage;
+import com.demoblaze.test.logic.login.Login;
 import com.demoblaze.test.pages.PageManager;
 
 public class FormularioLogic {
 
 	
 	private PageManager pages;
-	private InterationBrowser browser;
+	private String nomeUsuario;
+	private String senhaUsuario;
 
 	
 	public FormularioLogic() {
-	
 		pages = new PageManager();
-		browser = new InterationBrowser();
 
 	}
 	
@@ -28,27 +29,51 @@ public class FormularioLogic {
 	}
 
 	public void clicarAbout() {
-		browser.toClick(pages.homePage().getLinkAboutUs());
+		browserWeb().toClick(pages.homePage().getLinkAboutUs());
 	}
 	
 	public void clicarCart() {
-		browser.toClick(pages.homePage().getLinkCart());
+		browserWeb().toClick(pages.homePage().getLinkCart());
 	}
 
 	public void clicarLogIn() {
-		browser.toClick(pages.homePage().getLinkLogIn());
+		browserWeb().toClick(pages.homePage().getLinkLogIn());
 	}
 	
 	public void clicarSingUp() {
-		browser.toClick(pages.homePage().getLinkSingUp());
+		browserWeb().toClick(pages.homePage().getLinkSingUp());
 	}
 		
 	public void clicarLogOut() {
-		browser.toClick(pages.homePage().getLinkLogOut());
+		browserWeb().toClick(pages.homePage().getLinkLogOut());
 	}
 	
-	public void preencherEmail() {
-		
+	public void preencherUsername() {	
+		nomeUsuario = "saulo01";
 	}
+	
+	public void preencherPassword() {	
+		senhaUsuario = "123";
+	}
+
+	public void clicarBotaoLogin() {	
+		new Login().logar(nomeUsuario, senhaUsuario, pages);
+	}
+	
+	public void validarLogin() {
+		Assert.assertTrue(pages.homePage().getLinkNomeUser().isDisplayed());	
+	}
+	
+	public void clicarLogout() {
+		browserWeb().toClick(pages.homePage().getLinkLogOut());
+	}
+
+	public void validarNaoLogado() {
+		Assert.assertFalse(pages.homePage().getLinkNomeUser().isDisplayed());
+	}
+	
+	
+	
+	
 	
 }
