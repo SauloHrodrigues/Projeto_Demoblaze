@@ -8,6 +8,11 @@ public class LoginLogoutSteps {
 	
 	private LoginLogoutLogic form = new LoginLogoutLogic();
 
+	@Dado("^estar no site https://www\\.demoblaze\\.com$")
+	public void estarNoSiteHttpsWwwDemoblazeCom() throws Throwable {
+		form.acessarSite();
+	}
+	
 	@Quando("^clicar no link 'Log in'$")
 	public void clicarNoLinkLogIn() throws Throwable {
 	   form.clicarLogIn();

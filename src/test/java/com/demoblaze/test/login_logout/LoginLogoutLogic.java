@@ -4,7 +4,8 @@ import static com.demoblaze.kernel.Contexto.browserWeb;
 
 import org.junit.Assert;
 
-import com.demoblaze.test.utilitarios_test.page.PageManager;
+import com.demoblaze.kernel.Contexto;
+import com.demoblaze.test._manager_test.PageManager;
 
 public class LoginLogoutLogic {
 
@@ -16,7 +17,10 @@ public class LoginLogoutLogic {
 	
 	public LoginLogoutLogic() {
 		pages = new PageManager();
-
+	}
+	
+ 	public void acessarSite() {
+		Contexto.acessarSite();
 	}
 	
 	
@@ -69,10 +73,5 @@ public class LoginLogoutLogic {
 
 	public void validarNaoLogado() {
 		Assert.assertFalse(pages.homePage().getLinkNomeUser().isDisplayed());
-	}
-	
-	
-	
-	
-	
+	}	
 }

@@ -6,11 +6,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
-@CucumberOptions(features = "src/test/resources/feature/", 
-				glue = {"com.demoblaze","test.steps","kernel"},//,"kernel","test"
-				tags = {"~@loginLogout", "@usuarios"},
+@CucumberOptions(features = "src/test/resources/feature/", ///login_logout.feature
+				glue = {"com.demoblaze","test","kernel"},//,"kernel","test"
+				tags = {"~@loginLogout", "~@usuarios","@video"},//apresentacao_video
 				monochrome = false, 
-				snippets = SnippetType.CAMELCASE, 
+				snippets = SnippetType.CAMELCASE, //usuarios.feature
 				dryRun = false, 
 				strict = true)
 @RunWith(Cucumber.class)
