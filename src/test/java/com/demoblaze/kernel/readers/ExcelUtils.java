@@ -15,7 +15,7 @@ public class ExcelUtils {
 	private static HSSFWorkbook pastaDeTrabalho;
 	private static HSSFSheet abaPlanilha;
 	private static HSSFCell celula; 
-	private static ConfiguracoesPropriedades configuracoes;
+	private static ConfigurationProprerties configuracoes;
 	private FileInputStream planilha;
 	private int totalRegistros;
 	private int totalColunas;
@@ -23,7 +23,7 @@ public class ExcelUtils {
 	
 	
 	public ExcelUtils() {
-		configuracoes = new ConfiguracoesPropriedades();
+		configuracoes = new ConfigurationProprerties();
 	}
 
 	//metodo setar o arquivo (abre o arquivo)

@@ -6,9 +6,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
-@CucumberOptions(features = "src/test/resources/feature/", ///login_logout.feature
+@CucumberOptions(features = "src/test/resources/feature/", //projeto_demoblaze.feature
 				glue = {"com.demoblaze","test","kernel"},//,"kernel","test"
-				tags = {"~@loginLogout", "~@usuarios","@video"},//apresentacao_video
+				tags = {},
 				monochrome = false, 
 				snippets = SnippetType.CAMELCASE, //usuarios.feature
 				dryRun = false, 

@@ -6,11 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
-public class ConfiguracoesPropriedades {
+public class ConfigurationProprerties {
 	private Properties properties;
 	private final String propertyFilePath= "./src/test/resources/configuracoes/configuracoes.properties";
 		
-	public ConfiguracoesPropriedades(){
+	public ConfigurationProprerties(){
 		BufferedReader reader;
 		try {
 			reader = new BufferedReader(new FileReader(propertyFilePath));

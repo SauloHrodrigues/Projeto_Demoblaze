@@ -2,9 +2,9 @@ package com.demoblaze.kernel;
 
 import org.openqa.selenium.WebDriver;
 
-import com.demoblaze.kernel.driver.ConstrutorDriver;
+import com.demoblaze.kernel.driver.DriverFactory;
 import com.demoblaze.kernel.driver.InterationBrowser;
-import com.demoblaze.kernel.readers.ConfiguracoesPropriedades;
+import com.demoblaze.kernel.readers.ConfigurationProprerties;
 import com.demoblaze.kernel.utils.IdCenariosUtils;
 
 import cucumber.api.Scenario;
@@ -12,19 +12,20 @@ import cucumber.api.Scenario;
 
 public class Contexto {
 
-	private static ConstrutorDriver construtorDriver;
+	private static DriverFactory construtorDriver;
 	private static IdCenariosUtils idCenariosUtils;
 	private static InterationBrowser browser;
 	
 
 	public static void inicializar(Scenario scenario) {
 		setConstrutorDriver();
+		
 //		setIdCenario(scenario);
 		
 	}
 
 	private static void setConstrutorDriver() {
-		construtorDriver = new ConstrutorDriver();
+		construtorDriver = new DriverFactory();
 	}
 
 	public static WebDriver getDriver() {
@@ -48,11 +49,8 @@ public class Contexto {
 	}
 	
 	public static void acessarSite() {
-		ConfiguracoesPropriedades config = new ConfiguracoesPropriedades();
-		getDriver().get(config.getUrl());
-//		getDriver().get("https://www.demoblaze.com/");
-//		getDriver().get("https://www.demoblaze.com/");
-		
+		ConfigurationProprerties config = new ConfigurationProprerties();
+		getDriver().get(config.getUrl());		
 	} 
 
 	public static void finalizar() {

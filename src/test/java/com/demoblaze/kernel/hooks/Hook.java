@@ -10,6 +10,7 @@ import cucumber.api.java.Before;
 
 public class Hook {
 
+	
 	@Before
 	public void inicializarTeste(Scenario cenario) {
 		Contexto.inicializar(cenario);

@@ -1,8 +1,9 @@
-# language: pt
-@loginLogout
+#language: pt
+
 Funcionalidade: Realizar login e logout no site 'demoblaze';
 
-  Contexto:
+
+  Contexto: Fazer login
    	Dado estar no site https://www.demoblaze.com
     Quando clicar no link 'Log in'
     E preencher a caixa 'Username'
@@ -10,14 +11,12 @@ Funcionalidade: Realizar login e logout no site 'demoblaze';
     E clicar no botão 'Log in'
     
   @0001
-  Cenario: login na aplicação
-    Dado estar logado na aplicação
+  Cenario: Valida login na aplicação
     Então validar usuario logado.
 
   @0002
   Cenario: logout na aplicação
     Quando clicar no link 'Log out'
     Então validar usuario não mais logado
-  
-
-
+    
+	
