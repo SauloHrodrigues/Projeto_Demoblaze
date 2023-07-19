@@ -10,6 +10,10 @@ import cucumber.api.java.Before;
 
 public class Hook {
 
+//	@Before(value= {"0002"})
+//	public void fazerLogin(){
+//		System.out.println("teste");
+//	}
 	
 	@Before
 	public void inicializarTeste(Scenario cenario) {

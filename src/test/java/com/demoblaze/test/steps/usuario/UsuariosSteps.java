@@ -10,12 +10,12 @@ public class UsuariosSteps {
 	
 	@Quando("^clicar no link 'Sing up'$")
 	public void clicar_no_link_Sing_up() throws Throwable {
-	    usuarioLogic.clicarLinkSignUp();
+		usuarioLogic.clicarLinkSignUp();
 	}
-	
+
 	@Quando("^preencher um novo 'Username'$")
 	public void preencher_um_novo_Username() throws Throwable {
-	    usuarioLogic.preencherUserName();
+		   usuarioLogic.preencherUserName();
 	}
 
 	@Quando("^preencher um novo 'Password'$")

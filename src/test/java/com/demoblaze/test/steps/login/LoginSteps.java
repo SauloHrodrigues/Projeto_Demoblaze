@@ -11,7 +11,7 @@ public class LoginSteps {
 	private LoginLogic logic = new LoginLogic();
 
 	
-	@Dado("^estar no site https://www\\.demoblaze\\.com$")
+	@Dado("^estar no site 'https://www\\.demoblaze\\.com'$")
 	public void estar_no_site_https_www_demoblaze_com() throws Throwable {
 		Contexto.acessarSite();
 	}
