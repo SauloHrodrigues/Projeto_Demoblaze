@@ -20,6 +20,7 @@ public class LoginLogic {
 	}
 	
 	public void preencherUser_name() {
+		browserWeb().toHoperElementVisibility(page.getTxtUsername());
 		browserWeb().toWriter(page.getTxtUsername(), nomeUsuario);
 	}
 	
@@ -29,7 +30,6 @@ public class LoginLogic {
 	
 	public void clicarBotaoLogin() {
 //		TODO -> O BOTÃO NÃO ESTA NO DOM, POR ISSO A ESPERA NÃO ESTA FUNCIONANDO CORRETAMENTE
-		browserWeb().toHoperElementVisibility(page.getBtnLogin());
 		browserWeb().toClick(page.getBtnLogin());
 		browserWeb().toHoperElementVisibility(page.getLinkNomeUser());
 	}

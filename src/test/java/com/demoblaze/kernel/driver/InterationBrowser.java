@@ -4,6 +4,7 @@ import static com.demoblaze.kernel.Contexto.getDriver;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -18,17 +19,19 @@ public class InterationBrowser {
 	}
 	
 	public void toClick(WebElement element) {
-		wait.until(ExpectedConditions.visibilityOf(element));
 		element.click();
+	}
+
+	public void toClickJavaScript(WebElement element) {	
+		JavascriptExecutor js = (JavascriptExecutor) getDriver();
+		js.executeScript("arguments[0].click();", element);
 	}
 	
 	public void toWriter(WebElement element, String text) {
-		wait.until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(text);
 	}
 	
 	public String getTextElement(WebElement element) {
-		toHoperElementVisibility(element);
 		return element.getText();
 	}
 	
