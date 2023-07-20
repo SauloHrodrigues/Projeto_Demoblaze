@@ -6,11 +6,11 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
-@CucumberOptions(features = "src/test/resources/feature/", //projeto_demoblaze.feature
+@CucumberOptions(features = "src/test/resources/feature/",
 				glue = {"com.demoblaze","test//","test/steps/logout","kernel"},//,"kernel","test"
-				tags = {"~@ignorar"},//{"@0002","@0001"},
+				tags = {"~@ignorar"},
 				monochrome = false, 
-				snippets = SnippetType.CAMELCASE, //usuarios.feature
+				snippets = SnippetType.CAMELCASE,
 				dryRun = false, 
 				strict = true)
 @RunWith(Cucumber.class)

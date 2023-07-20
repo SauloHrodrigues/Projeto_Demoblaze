@@ -1,6 +1,6 @@
 #language: pt
 
-Funcionalidade: Cadastro de usuarios 'demoblaze';
+Funcionalidade: Usuarios site 'demoblaze';
     
     Contexto:
     Dado estar no site 'https://www.demoblaze.com'

@@ -3,7 +3,7 @@
 Funcionalidade: Realizar login e logout no site 'demoblaze';
 
 
- 	Contexto:Fazer login
+ 	Contexto: Fazer login
    	Dado estar no site 'https://www.demoblaze.com'
     Quando clicar no link 'Log in'
     E preencher a caixa 'Username'
