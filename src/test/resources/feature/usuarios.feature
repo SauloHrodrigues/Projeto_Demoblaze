@@ -13,7 +13,7 @@ Funcionalidade: Usuarios site 'demoblaze';
     Quando clicar no botao 'Sign up'
   	Então validar frase "Sign up successful."
 
-	@0004 @ignorar
+	@0004  @ignorar
   Cenario: Validar usuário já existente na aplicação 
   	Então preencher 'Username' com "USUARIO_EXISTENTE’"
     E preencher 'Password' com "SENHA_EXISTENTE"

@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
-@CucumberOptions(features = "src/test/resources/feature/",
+@CucumberOptions(features = "src/test/resources/feature//",
 				glue = {"com.demoblaze","test//","test/steps/logout","kernel"},//,"kernel","test"
 				tags = {"~@ignorar"},
 				monochrome = false, 

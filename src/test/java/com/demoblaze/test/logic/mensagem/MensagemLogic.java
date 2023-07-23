@@ -16,6 +16,7 @@ public class MensagemLogic {
 	}
 	
 	public void preencherEmail() {
+		browserWeb().toHoperElementVisibility(page.getTxtContactEmail());
 		browserWeb().toWriter(page.getTxtContactEmail(), "email");
 	}
 	

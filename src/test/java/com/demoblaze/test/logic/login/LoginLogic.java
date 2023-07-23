@@ -30,7 +30,13 @@ public class LoginLogic {
 	
 	public void clicarBotaoLogin() {
 //		TODO -> O BOTÃO NÃO ESTA NO DOM, POR ISSO A ESPERA NÃO ESTA FUNCIONANDO CORRETAMENTE
-		browserWeb().toClick(page.getBtnLogin());
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		browserWeb().toClick(page.getBtnLogin());	
 		browserWeb().toHoperElementVisibility(page.getLinkNomeUser());
 	}
 	

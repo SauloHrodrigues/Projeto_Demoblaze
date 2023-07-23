@@ -19,6 +19,7 @@ public class InterationBrowser {
 	}
 	
 	public void toClick(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
 	}
 

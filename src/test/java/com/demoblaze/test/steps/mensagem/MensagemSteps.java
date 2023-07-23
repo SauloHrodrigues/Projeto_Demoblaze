@@ -17,11 +17,12 @@ public class MensagemSteps {
 	public void preencherEMailContactEmail() throws Throwable {
 		logic.preencherEmail();
 	}
-
-	@Quando("^preencher e-mail 'Contact Name:'$")
-	public void preencherEMailContactName() throws Throwable {
-		logic.preencherNome();
+	
+	@Quando("^preencher nome 'Contact Name:'$")
+	public void preencherNomeContactName() throws Throwable {
+	   logic.preencherNome();
 	}
+
 
 	@Quando("^preencher uma mensagem$")
 	public void preencherUmaMensagem() throws Throwable {

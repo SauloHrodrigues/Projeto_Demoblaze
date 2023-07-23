@@ -23,6 +23,13 @@ public class UsuarioLogic {
 		preencherUserName("blablabla05");//TODO Futuro excel
 	}
 	public void preencherUserName(String userName) {
+//	TODO acrescentar espera
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		browserWeb().toWriter(page.getTxtUserName(), userName);
 	}
 	
@@ -43,6 +50,7 @@ public class UsuarioLogic {
 		browserWeb().toHoperAlertPresent();
 		Alert alerta = Contexto.getDriver().switchTo().alert();
 		Assert.assertEquals(msgEsperada, alerta.getText());
+		alerta.dismiss();
 	}
 	
 }
