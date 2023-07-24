@@ -50,4 +50,15 @@ public class ProdutosSteps {
 		logic.validarSomaProdutos();
 		System.out.println("Clicar");
 	}
+	
+	@Quando("^remover do carrinho o produto adicionado$")
+	public void removerDoCarrinhoOProdutoAdicionado() throws Throwable {
+//	    logic.excluirItemCarrinho();
+	}
+
+	@Então("^validar se o carrinho de compras se encontra vazio$")
+	public void validarSeOCarrinhoDeComprasSeEncontraVazio() throws Throwable {
+	   logic.validarCarrinhoVazio();
+	}
+
 }

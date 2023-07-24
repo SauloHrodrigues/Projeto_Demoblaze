@@ -24,13 +24,7 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
 		Quando clicar no link 'Cart'
 		Então validar produto adicionado no carrinho de compras  
 		
-#		
-#		Adicionar múltiplos produtos ao carrinho de compras
-#• ID: 0009
-#• Descrição: Realizar o descritivo do cenário de ID 0001, adicionar dois
-#produtos de diferentes categorias ao carrinho de compras e validar que a
-#soma dos valores dos produtos está correta.
-	@0009
+	@0009 @ignorar
   Cenario: Adicionar múltiplos produtos ao carrinho de compras
 		Quando clicar no link "Monitors"
 		Então clicar no primeiro item
@@ -42,5 +36,16 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
 		E clicar no link 'Add to cart'
 		Então validar frase "Product added."
 		Quando clicar no link 'Cart'
-		Então validar a soma dos produtos do carrinho de compras  
+		Então validar a soma dos produtos do carrinho de compras 
+
+	@0010
+  Cenario: Adicionar múltiplos produtos ao carrinho de compras
+		Quando clicar no link "Monitors"
+		Então clicar no primeiro item
+		E clicar no link 'Add to cart'
+		Então validar frase "Product added."
+		Quando clicar no link 'Cart'
+		E remover do carrinho o produto adicionado
+		Então validar se o carrinho de compras se encontra vazio 
+	
 		 

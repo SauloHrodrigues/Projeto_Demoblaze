@@ -25,6 +25,10 @@ public class ProdutosPage {
 
 	@FindBy(xpath = "//tbody[@id='tbodyid']//a[1]")
 	private WebElement linkDeletePrimeiroItem;
+
+	@FindBy(id = "tbodyid")
+	private WebElement txtAreaProdutosCarrinho;
+	
 	
 	@FindBy(xpath = "//tbody[@id='tbodyid']//tr[1]/td[2]")
 	private WebElement txtPrimeiroItemCarrinho;
@@ -51,53 +55,91 @@ public class ProdutosPage {
 		PageFactory.initElements(getDriver(), this);
 	}
 
+
+
+	public int getX() {
+		return x;
+	}
+
+
+
 	public WebElement getLinkLaptops() {
 		return linkLaptops;
 	}
 
-	public WebElement getProdutoDell() {
-		return produtoDell;
-	}
+
 
 	public WebElement getLinkMonitors() {
 		return linkMonitors;
 	}
 
+
+
 	public WebElement getLinkPrimeiroProduto() {
 		return linkPrimeiroProduto;
 	}
+
+
 
 	public WebElement getLinkAddToCart() {
 		return linkAddToCart;
 	}
 
-	public WebElement getlinkDeletePrimeiroItem() {
+
+
+	public WebElement getProdutoDell() {
+		return produtoDell;
+	}
+
+
+
+	public WebElement getLinkDeletePrimeiroItem() {
 		return linkDeletePrimeiroItem;
 	}
 
-	public WebElement getLinkCart() {
-		return linkCart;
+
+
+	public WebElement getTxtAreaProdutosCarrinho() {
+		return txtAreaProdutosCarrinho;
 	}
+
+
 
 	public WebElement getTxtPrimeiroItemCarrinho() {
 		return txtPrimeiroItemCarrinho;
 	}
 
-	public WebElement getLinkHome() {
-		return linkHome;
-	}
+
 
 	public WebElement getTxtPrecoPrimeiroItem() {
 		return txtPrecoPrimeiroItem;
 	}
 
+
+
 	public WebElement getTxtPrecoSegundoItem() {
 		return txtPrecoSegundoItem;
 	}
 
+
+
 	public WebElement getTxtPrecoTotal() {
 		return txtPrecoTotal;
-	}	
+	}
+
+
+
+	public WebElement getLinkCart() {
+		return linkCart;
+	}
+
+
+
+	public WebElement getLinkHome() {
+		return linkHome;
+	}
+
+
 	
 	
 }

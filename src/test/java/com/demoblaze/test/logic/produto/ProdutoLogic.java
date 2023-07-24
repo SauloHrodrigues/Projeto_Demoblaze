@@ -52,21 +52,22 @@ public class ProdutoLogic {
 	
 	public void clicarCart() {
 		Contexto.browserWeb().toClick(page.getLinkCart());
+		browserWeb().toHoperElementVisibility(page.getTxtPrecoTotal());
 	}
 	
 	public void validarProdutoCarrinho() {
 		Contexto.browserWeb().toHoperElementVisibility(page.getTxtPrimeiroItemCarrinho());
 		String aux = page.getTxtPrimeiroItemCarrinho().getText();
-		Contexto.browserWeb().toClick(page.getlinkDeletePrimeiroItem());
+		Contexto.browserWeb().toClick(page.getLinkDeletePrimeiroItem());
 		Assert.assertTrue(descricaoProduto.contains(aux));	
 		System.out.println("Após o assert ");
 		excluirItemCarrinho();
 	}
 	
 	public void excluirItemCarrinho() {
-		Contexto.browserWeb().toHoperElementVisibility(page.getlinkDeletePrimeiroItem());
-		Contexto.browserWeb().toClick(page.getlinkDeletePrimeiroItem());
-		Contexto.browserWeb().elementInvisivel(page.getlinkDeletePrimeiroItem());		
+		Contexto.browserWeb().toHoperElementVisibility(page.getLinkDeletePrimeiroItem());
+		Contexto.browserWeb().toClick(page.getLinkDeletePrimeiroItem());
+		Contexto.browserWeb().elementInvisivel(page.getLinkDeletePrimeiroItem());		
 	}
 	
 	public void retornarHome() {
@@ -83,5 +84,11 @@ public class ProdutoLogic {
 		Assert.assertTrue((produto01+produto02)==somaSite);
 		excluirItemCarrinho();
 		excluirItemCarrinho();
+	}
+	
+	public void validarCarrinhoVazio() {
+//		browserWeb().elementInvisivel(page.getTxtPrecoTotal());
+//		System.out.println("Valor total = "+ page.getTxtPrecoTotal().isDisplayed());
+		Assert.assertFalse(page.getTxtPrecoTotal().isDisplayed());
 	}
 }
