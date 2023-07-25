@@ -15,11 +15,21 @@ public class ProdutoLogic {
 		page = new ProdutosPage();
 	}
 	
+	private void esperaTemporaria(int tempo) {
+		try {
+			Thread.sleep(tempo);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	public void clicarLink(String link) {
-		if(link.equalsIgnoreCase("notebook")) {
+		if(link.equalsIgnoreCase("Laptops")) {
 			Contexto.browserWeb().toClick(page.getLinkLaptops());			
 		}else if(link.equalsIgnoreCase("Monitors")) {
 			Contexto.browserWeb().toClick(page.getLinkMonitors());
+		}else if(link.equalsIgnoreCase("Phones")) {
+			Contexto.browserWeb().toClick(page.getLinkPhones());
 		}
 	}
 
@@ -70,6 +80,18 @@ public class ProdutoLogic {
 		Contexto.browserWeb().elementInvisivel(page.getLinkDeletePrimeiroItem());		
 	}
 	
+	public void limparItensCarrinho() {
+		while (!page.getTxtAreaProdutosCarrinho().getText().equals("")) {
+			excluirItemCarrinho();
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
 	public void retornarHome() {
 		browserWeb().toHoperElementVisibility(page.getLinkHome());
 		browserWeb().toClick(page.getLinkHome());
@@ -86,9 +108,16 @@ public class ProdutoLogic {
 		excluirItemCarrinho();
 	}
 	
-	public void validarCarrinhoVazio() {
-//		browserWeb().elementInvisivel(page.getTxtPrecoTotal());
-//		System.out.println("Valor total = "+ page.getTxtPrecoTotal().isDisplayed());
-		Assert.assertFalse(page.getTxtPrecoTotal().isDisplayed());
+	public void validarCarrinhoVazio() { //TODO
+		Assert.assertTrue(page.getTxtAreaProdutosCarrinho().getText().equals(""));
+	}
+	
+
+	public void validarAtualizaçãoPreco() {
+		esperaTemporaria(1000);
+		Integer produto01 = Integer.parseInt(page.getTxtPrecoPrimeiroItem().getText());
+		Integer somaSite = Integer.parseInt(page.getTxtPrecoTotal().getText());
+		Assert.assertEquals(produto01, somaSite);
+		limparItensCarrinho();	
 	}
 }

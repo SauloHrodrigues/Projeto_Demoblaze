@@ -3,17 +3,13 @@ package com.demoblaze.kernel.hooks;
 import java.io.IOException;
 
 import com.demoblaze.kernel.Contexto;
+import com.demoblaze.kernel.utils.Evidencia;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
 public class Hook {
-
-//	@Before(value= {"0002"})
-//	public void fazerLogin(){
-//		System.out.println("teste");
-//	}
 	
 	@Before
 	public void inicializarTeste(Scenario cenario) {

@@ -53,12 +53,22 @@ public class ProdutosSteps {
 	
 	@Quando("^remover do carrinho o produto adicionado$")
 	public void removerDoCarrinhoOProdutoAdicionado() throws Throwable {
-//	    logic.excluirItemCarrinho();
+	    logic.excluirItemCarrinho();
 	}
 
 	@Então("^validar se o carrinho de compras se encontra vazio$")
 	public void validarSeOCarrinhoDeComprasSeEncontraVazio() throws Throwable {
 	   logic.validarCarrinhoVazio();
 	}
+	@Quando("^remover primeiro item do carrinho$")
+	public void removerPrimeiroItemDoCarrinho() throws Throwable {
+	   logic.excluirItemCarrinho();
+		
+	}
 
+	@Então("^validar atualização do valor$")
+	public void validarAtualizaçãoDoValor() throws Throwable {
+	   logic.validarAtualizaçãoPreco();
+	}
+	
 }

@@ -4,15 +4,18 @@ import static com.demoblaze.kernel.Contexto.browserWeb;
 
 import org.junit.Assert;
 
+import com.demoblaze.test.model.FormularioModel;
 import com.demoblaze.test.pages.login.LoginPage;
 
 public class LoginLogic {
 	private LoginPage page;
 	private String nomeUsuario = "saulo01";
 	private String senhaUsuario = "123";
+//	private FormularioModel form;
 
 	public LoginLogic() {
-		page= new LoginPage();			
+		page= new LoginPage();
+//		form = new FormularioModel();
 	}
 
 	public void clicarLog_in() {
@@ -22,20 +25,17 @@ public class LoginLogic {
 	public void preencherUser_name() {
 		browserWeb().toHoperElementVisibility(page.getTxtUsername());
 		browserWeb().toWriter(page.getTxtUsername(), nomeUsuario);
+//		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());
 	}
 	
 	public void preencherPass_word() {
 		browserWeb().toWriter(page.getTxtPassword(), senhaUsuario);
+//		browserWeb().toWriter(page.getTxtPassword(), form.getSenhaBancoDados());
 	}
 	
 	public void clicarBotaoLogin() {
-//		TODO -> O BOTÃO NÃO ESTA NO DOM, POR ISSO A ESPERA NÃO ESTA FUNCIONANDO CORRETAMENTE
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+
+		browserWeb().toHoperElementVisibility(page.getBtnLogin());
 		browserWeb().toClick(page.getBtnLogin());	
 		browserWeb().toHoperElementVisibility(page.getLinkNomeUser());
 	}

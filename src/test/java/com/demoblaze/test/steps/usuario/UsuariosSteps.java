@@ -16,6 +16,7 @@ public class UsuariosSteps {
 	@Quando("^preencher um novo 'Username'$")
 	public void preencher_um_novo_Username() throws Throwable {
 		   usuarioLogic.preencherUserName();
+		   
 	}
 
 	@Quando("^preencher um novo 'Password'$")

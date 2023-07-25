@@ -1,6 +1,7 @@
 package com.demoblaze.test.logic.usuario;
 
 import static com.demoblaze.kernel.Contexto.browserWeb;
+import java.util.Random;
 
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
@@ -20,7 +21,11 @@ public class UsuarioLogic {
 	}
 	
 	public void preencherUserName() {
-		preencherUserName("blablabla05");//TODO Futuro excel
+		Random aleatorio = new Random();
+		int valor = aleatorio.nextInt();
+		String usuarioAleatorio = "usuario"+valor;		
+		preencherUserName(usuarioAleatorio);//TODO Futuro excel
+		
 	}
 	public void preencherUserName(String userName) {
 //	TODO acrescentar espera

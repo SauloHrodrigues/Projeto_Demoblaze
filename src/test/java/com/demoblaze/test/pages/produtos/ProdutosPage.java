@@ -6,13 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProdutosPage {
+import com.demoblaze.test.pages.compra.CompraPage;
+
+public class ProdutosPage extends CompraPage{
 	int x=1;
 	@FindBy(xpath = "//a[text()='Laptops']")
 	private WebElement linkLaptops;
 
 	@FindBy(xpath = "//a[text()='Monitors']")
 	private WebElement linkMonitors;
+	
+	@FindBy(xpath = "//a[text()='Phones']")
+	private WebElement linkPhones;
 
 	@FindBy(xpath = "//div[@id='tbodyid']/div[@class='col-lg-4 col-md-6 mb-4'][1]")
 	private WebElement linkPrimeiroProduto;
@@ -23,7 +28,7 @@ public class ProdutosPage {
 	@FindBy(xpath = "//h4[@class='card-title']/a[contains(text(),'Dell')]")
 	private WebElement produtoDell;
 
-	@FindBy(xpath = "//tbody[@id='tbodyid']//a[1]")
+	@FindBy(xpath = "//tbody[@id='tbodyid']//a")
 	private WebElement linkDeletePrimeiroItem;
 
 	@FindBy(id = "tbodyid")
@@ -47,99 +52,69 @@ public class ProdutosPage {
 	private WebElement linkCart;
 
 	@FindBy(xpath = "//div[@id='navbarExample']//a[text()='Home ']")
-	private WebElement linkHome;
-	
-	
+	private WebElement linkHome;	
 
 	public ProdutosPage() {
 		PageFactory.initElements(getDriver(), this);
 	}
 
-
-
 	public int getX() {
 		return x;
 	}
-
-
 
 	public WebElement getLinkLaptops() {
 		return linkLaptops;
 	}
 
-
-
 	public WebElement getLinkMonitors() {
 		return linkMonitors;
 	}
-
-
 
 	public WebElement getLinkPrimeiroProduto() {
 		return linkPrimeiroProduto;
 	}
 
-
-
 	public WebElement getLinkAddToCart() {
 		return linkAddToCart;
 	}
-
-
 
 	public WebElement getProdutoDell() {
 		return produtoDell;
 	}
 
-
-
 	public WebElement getLinkDeletePrimeiroItem() {
 		return linkDeletePrimeiroItem;
 	}
-
-
 
 	public WebElement getTxtAreaProdutosCarrinho() {
 		return txtAreaProdutosCarrinho;
 	}
 
-
-
 	public WebElement getTxtPrimeiroItemCarrinho() {
 		return txtPrimeiroItemCarrinho;
 	}
-
-
 
 	public WebElement getTxtPrecoPrimeiroItem() {
 		return txtPrecoPrimeiroItem;
 	}
 
-
-
 	public WebElement getTxtPrecoSegundoItem() {
 		return txtPrecoSegundoItem;
 	}
-
-
 
 	public WebElement getTxtPrecoTotal() {
 		return txtPrecoTotal;
 	}
 
-
-
 	public WebElement getLinkCart() {
 		return linkCart;
 	}
-
-
 
 	public WebElement getLinkHome() {
 		return linkHome;
 	}
 
-
-	
-	
+	public WebElement getLinkPhones() {
+		return linkPhones;
+	}
 }
