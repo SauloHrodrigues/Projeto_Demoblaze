@@ -2,6 +2,7 @@ package com.demoblaze.test.model;
 
 import java.util.List;
 
+import com.demoblaze.kernel.Contexto;
 import com.demoblaze.kernel.readers.ExcelUtils;
 
 public class FormularioModel {
@@ -19,8 +20,9 @@ public class FormularioModel {
 	
 	public FormularioModel() {
 		excel = new ExcelUtils();
+		
 //		registro = excel.buscarRegistro(CODIGO_CENARIO ,Contexto.getIdCenario(), this.planilha);
-		registro = excel.buscarRegistro(CODIGO_CENARIO ,"#0001", this.planilha);
+		registro = excel.buscarRegistro(CODIGO_CENARIO ,Contexto.getIdCenario(), planilha);
 		excel.closeExcel();	
 	}
 	

@@ -18,8 +18,7 @@ Funcionalidade: efetivar compra no site 'demoblaze';
 		E clicar no link 'Add to cart'
 		Então validar frase "Product added."
 	
-		
-	@0012
+	@0012  
   Cenario: Adicionar múltiplos produtos ao carrinho de compras
   		Quando clicar no link 'Cart'
   		E clicar em 'Place Order'
@@ -31,7 +30,3 @@ Funcionalidade: efetivar compra no site 'demoblaze';
   		E preencha o Campo 'Year'
   		Quando clicar no botão 'Purchase'
   		Então validar compra concluida
-  		
-  		
-	
-	

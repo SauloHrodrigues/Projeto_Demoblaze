@@ -11,11 +11,11 @@ Funcionalidade: Realizar login e logout no site 'demoblaze';
     E clicar no botão 'Log in'
  
  
-  @0001 @ignorar
+  @0001
   Cenario: Valida login na aplicação
     Então validar usuario logado.
 
-  @0002 @ignorar
+  @0002
   Cenario: logout na aplicação
     Quando clicar no link 'Log out'
     Então validar usuario não mais logado

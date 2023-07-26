@@ -71,7 +71,8 @@ public class ProdutoLogic {
 		Contexto.browserWeb().toClick(page.getLinkDeletePrimeiroItem());
 		Assert.assertTrue(descricaoProduto.contains(aux));	
 		System.out.println("Após o assert ");
-		excluirItemCarrinho();
+		
+		limparItensCarrinho();
 	}
 	
 	public void excluirItemCarrinho() {

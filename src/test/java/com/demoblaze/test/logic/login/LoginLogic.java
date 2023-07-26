@@ -8,29 +8,34 @@ import com.demoblaze.test.model.FormularioModel;
 import com.demoblaze.test.pages.login.LoginPage;
 
 public class LoginLogic {
-	private LoginPage page;
-	private String nomeUsuario = "saulo01";
-	private String senhaUsuario = "123";
-//	private FormularioModel form;
+	private LoginPage page;	
+	private FormularioModel form;
 
 	public LoginLogic() {
 		page= new LoginPage();
-//		form = new FormularioModel();
+		form = new FormularioModel();
 	}
 
 	public void clicarLog_in() {
+//		browserWeb().toHoperElementVisibility(page.getLinkLogIn());
+		try {
+			Thread.sleep(1500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		browserWeb().toClick(page.getLinkLogIn());
 	}
 	
 	public void preencherUser_name() {
 		browserWeb().toHoperElementVisibility(page.getTxtUsername());
-		browserWeb().toWriter(page.getTxtUsername(), nomeUsuario);
-//		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());
+	
+		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());
+		
 	}
 	
 	public void preencherPass_word() {
-		browserWeb().toWriter(page.getTxtPassword(), senhaUsuario);
-//		browserWeb().toWriter(page.getTxtPassword(), form.getSenhaBancoDados());
+		browserWeb().toWriter(page.getTxtPassword(), form.getSenhaBancoDados());
 	}
 	
 	public void clicarBotaoLogin() {

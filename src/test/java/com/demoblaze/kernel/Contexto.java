@@ -19,7 +19,7 @@ public class Contexto {
 
 	public static void inicializar(Scenario scenario) {
 		setConstrutorDriver();
-//		setIdCenario(scenario);//01
+		setIdCenario(scenario);//01
 		
 	}
 

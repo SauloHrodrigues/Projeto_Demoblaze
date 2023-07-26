@@ -29,6 +29,7 @@ public class ExcelUtils {
 	//metodo setar o arquivo (abre o arquivo)
 	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) {  
 		arquivo = new File(configuracoes.getBaseDados()); 
+		 
 		planilha = null;
 		try {
 			planilha = new FileInputStream(arquivo);
@@ -61,7 +62,8 @@ public class ExcelUtils {
 	
 	public List<String> buscarRegistro(Integer coluna, String texto, String planilha) {
 		setArquivoExcel(planilha);
-		int linhaRegistro =0;
+		
+		int linhaRegistro =1;
 		List<String> registro= new ArrayList<>(); 
 		
 		while (linhaRegistro < totalRegistros) {
@@ -69,6 +71,7 @@ public class ExcelUtils {
 				
 				for(int i=0;i<totalColunas;i++) {
 					registro.add(getConteudoCelula(linhaRegistro, i));
+					System.out.println("Teste = "+getConteudoCelula(linhaRegistro, i));
 				}
 				linhaRegistro = totalRegistros;
 				break;

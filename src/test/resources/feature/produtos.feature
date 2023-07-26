@@ -10,12 +10,12 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
     E clicar no botão 'Log in'
  
  
-  @0007 @ignorar
+  @0007
   Cenario: Validar um produto notebook da marca Dell
 		Quando clicar no link "Laptops"
 		Então validar a aparição de ao menos um produto contendo o texto (marca) 'Dell' em seu título.    
     
-  @0008 @ignorar
+  @0008
   Cenario: Adicionar um produto ao carrinho de compras
 		Quando clicar no link "Monitors"
 		Então clicar no primeiro item
@@ -24,7 +24,7 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
 		Quando clicar no link 'Cart'
 		Então validar produto adicionado no carrinho de compras  
 		
-	@0009 @ignorar
+	@0009
   Cenario: Adicionar múltiplos produtos ao carrinho de compras
 		Quando clicar no link "Monitors"
 		Então clicar no primeiro item
@@ -38,7 +38,7 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
 		Quando clicar no link 'Cart'
 		Então validar a soma dos produtos do carrinho de compras 
 
-	@0010 @ignorar
+	@0010
   Cenario: Adicionar múltiplos produtos ao carrinho de compras
 		Quando clicar no link "Monitors"
 		Então clicar no primeiro item
@@ -48,7 +48,7 @@ Funcionalidade:  Manipular produtos no site 'demoblaze';
 		E remover do carrinho o produto adicionado
 		Então validar se o carrinho de compras se encontra vazio 
 
-	@0011 @ignorar
+	@0011
   Cenario: Adicionar múltiplos produtos ao carrinho de compras
 		Quando clicar no link "Laptops"
 		Então clicar no primeiro item
