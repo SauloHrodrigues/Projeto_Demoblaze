@@ -24,12 +24,13 @@ public class LoginLogic {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		browserWeb().toClick(page.getLinkLogIn());
+//		browserWeb().toClick(page.getLinkLogIn());
+		browserWeb().toClickJavaScript(page.getLinkLogIn());
+		
 	}
 	
 	public void preencherUser_name() {
 		browserWeb().toHoperElementVisibility(page.getTxtUsername());
-	
 		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());
 		
 	}
@@ -39,14 +40,12 @@ public class LoginLogic {
 	}
 	
 	public void clicarBotaoLogin() {
-
 		browserWeb().toHoperElementVisibility(page.getBtnLogin());
-		browserWeb().toClick(page.getBtnLogin());	
+		browserWeb().toClickJavaScript(page.getBtnLogin());	
 		browserWeb().toHoperElementVisibility(page.getLinkNomeUser());
 	}
 	
-	public void validarLogin() {
-		
+	public void validarLogin() {			
 		Assert.assertTrue(page.getLinkNomeUser().isDisplayed());
 	}
 }

@@ -18,7 +18,7 @@ public class Hook {
 	
 	@After
 	public void finalizaProjeto(Scenario cenario) throws IOException {
-//		new Evidencia().capturarTela(cenario);
+		new Evidencia().capturarTela(cenario);
 		Contexto.finalizar();
 	}
 }

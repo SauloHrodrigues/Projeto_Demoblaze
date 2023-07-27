@@ -14,31 +14,37 @@ import cucumber.api.Scenario;
 
 public class Evidencia  {
 
-	public void capturarTela(Scenario sc) throws IOException {
-		//TODO tratar exceção
+	public void capturarTela(Scenario sc) {
 		LocalDateTime data = LocalDateTime.now();
 		int dd = data.getDayOfMonth();
 		int MM = data.getMonthValue();
 		int aaaa = data.getYear();
 		int hh =data.getHour();
 		int mm = data.getMinute();
-		//arrumar TODO 
-		String aux =sc.getSourceTagNames().stream().filter(t->t.startsWith("@#")).findFirst().get();
-		String[] tag = aux.split("@");
-		String status;
-		
-		if(sc.isFailed()) {
-			status="FAIL";
-		}else {
-			status ="PASS";
-		}
-		
-//		TakesScreenshot screen = (TakesScreenshot) getDriver();
+		int ss = data.getSecond();
+		String status, pasta;
+		String[] tag =(sc.getSourceTagNames().stream().filter(t->t.startsWith("@")).findFirst().get()).split("@");
+	
 		TakesScreenshot screen = (TakesScreenshot) getDriver();
 		File evidencias= screen.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(evidencias, new File(
-				"evidencias"+File.separator+tag[1]+"_"+dd+"_"+MM+"_"+aaaa+
-				"_"+hh+"_"+mm+"_"+status+".jpg"));
+		
+		if(sc.isFailed()) {
+			status="FALHOU";
+			pasta = "falha";
+			
+		}else {		
+			status ="PASSOU";
+			pasta = "sucesso";
+		}
+		
+		try {
+			FileUtils.copyFile(evidencias, new File(
+					"evidencias"+File.separator+
+					pasta+File.separator+"ID"+"_"+tag[1]+"_"+status+"_"+dd+"_"+MM+"_"+aaaa+
+					"_"+hh+"_"+mm+"_"+ss+".jpg"));
+		} catch (IOException e) {
+			System.out.println("Pasta \" "+pasta+" \" não encontrada! ");
+			e.printStackTrace();
+		}		
 	}
-
 }

@@ -19,6 +19,7 @@ public class LoginSteps {
 	@Quando("^clicar no link 'Log in'$")
 	public void clicar_no_link_Log_in() throws Throwable {
 		logic.clicarLog_in();
+		
 	}
 
 	@Quando("^preencher a caixa 'Username'$")

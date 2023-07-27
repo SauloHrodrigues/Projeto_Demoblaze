@@ -21,7 +21,7 @@ public class LoginPage {
 	private WebElement btnLogin;
 	
 	@FindBy(id = "nameofuser")
-	private WebElement linkNomeUser;
+	private WebElement linkNomeUser;//   
 
 //	Construtor
 	public LoginPage() {
