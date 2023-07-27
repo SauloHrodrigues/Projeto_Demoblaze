@@ -9,18 +9,14 @@ import com.demoblaze.kernel.utils.IdCenariosUtils;
 
 import cucumber.api.Scenario;
 
-
 public class Contexto {
-
 	private static DriverFactory construtorDriver;
 	private static IdCenariosUtils idCenariosUtils;
 	private static InterationBrowser browser;
 	
-
 	public static void inicializar(Scenario scenario) {
 		setConstrutorDriver();
-		setIdCenario(scenario);//01
-		
+		setIdCenario(scenario);		
 	}
 
 	private static void setConstrutorDriver() {
@@ -29,7 +25,6 @@ public class Contexto {
 
 	public static WebDriver getDriver() {
 		return construtorDriver.getDriver();
-
 	}
 
 	public static InterationBrowser browserWeb() {

@@ -51,7 +51,6 @@ public class ProdutoLogic {
 			e.printStackTrace();
 		}
 		descricaoProduto = page.getLinkPrimeiroProduto().getText();
-		System.out.println("Descrição = "+ descricaoProduto);
 		Contexto.browserWeb().toClick(page.getLinkPrimeiroProduto());
 	}
 	
@@ -69,9 +68,7 @@ public class ProdutoLogic {
 		Contexto.browserWeb().toHoperElementVisibility(page.getTxtPrimeiroItemCarrinho());
 		String aux = page.getTxtPrimeiroItemCarrinho().getText();
 		Contexto.browserWeb().toClick(page.getLinkDeletePrimeiroItem());
-		Assert.assertTrue(descricaoProduto.contains(aux));	
-		System.out.println("Após o assert ");
-		
+		Assert.assertTrue(descricaoProduto.contains(aux));			
 		limparItensCarrinho();
 	}
 	
@@ -109,11 +106,10 @@ public class ProdutoLogic {
 		excluirItemCarrinho();
 	}
 	
-	public void validarCarrinhoVazio() { //TODO
+	public void validarCarrinhoVazio() {
 		Assert.assertTrue(page.getTxtAreaProdutosCarrinho().getText().equals(""));
 	}
 	
-
 	public void validarAtualizaçãoPreco() {
 		esperaTemporaria(1000);
 		Integer produto01 = Integer.parseInt(page.getTxtPrecoPrimeiroItem().getText());

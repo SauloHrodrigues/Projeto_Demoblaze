@@ -15,8 +15,8 @@ public class UsuariosSteps {
 
 	@Quando("^preencher um novo 'Username'$")
 	public void preencher_um_novo_Username() throws Throwable {
-		   usuarioLogic.preencherUserName();
-		   
+		
+		   usuarioLogic.preencherUserName();	   
 	}
 
 	@Quando("^preencher um novo 'Password'$")
@@ -43,5 +43,4 @@ public class UsuariosSteps {
 	public void preencher_Password_com(String passWord) throws Throwable {
 	   usuarioLogic.preencherPassWord(passWord);
 	}
-
 }

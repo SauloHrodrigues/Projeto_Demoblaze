@@ -4,13 +4,16 @@ import static com.demoblaze.kernel.Contexto.browserWeb;
 
 import org.junit.Assert;
 
+import com.demoblaze.test.model.FormularioModel;
 import com.demoblaze.test.pages.compra.CompraPage;
 
 public class CompraLogic {
 	private CompraPage page;
+	private FormularioModel model;
 
 	public CompraLogic() {
 		page = new CompraPage();
+		model = new FormularioModel();
 	}
 	
 	public void clicarPlaceOrder() {
@@ -20,27 +23,27 @@ public class CompraLogic {
 	
 	public void preencherName() {
 		browserWeb().toHoperElementVisibility(page.getTxtName());
-		browserWeb().toWriter(page.getTxtName(), "Saulo");
+		browserWeb().toWriter(page.getTxtName(), model.getNomeBancoDados());
 	}
 	
 	public void preencherCountry() {
-		browserWeb().toWriter(page.getTxtCountry(),"Brasil");
+		browserWeb().toWriter(page.getTxtCountry(), model.getPaisBancoDados());
 	}
 	
 	public void preencherCity() {
-		browserWeb().toWriter(page.getTxtCiy(),"Campinas");
+		browserWeb().toWriter(page.getTxtCiy(), model.getCidadeBancoDados());
 	}
 	
 	public void preencherCredtCard() {
-		browserWeb().toWriter(page.getTxtCredCard(),"222333666");
+		browserWeb().toWriter(page.getTxtCredCard(), model.getCartaoCreditoBancoDados());
 	}
 	
 	public void preencherMonth() {
-		browserWeb().toWriter(page.getTxtMoth(),"agosto");
+		browserWeb().toWriter(page.getTxtMoth(), model.getMesBancoDados());
 	}
 	
 	public void preencherYear() {
-		browserWeb().toWriter(page.getTxtYear(), "2023");
+		browserWeb().toWriter(page.getTxtYear(), model.getAnoBancoDados());
 	}
 	
 	public void clicarBotaoPurchase() {
@@ -48,7 +51,6 @@ public class CompraLogic {
 	}	
 	
 	public void validaCompra() {
-		System.out.println("validar");
 		browserWeb().toHoperElementVisibility(page.getMsgSucesso());
 		Assert.assertTrue(page.getMsgSucesso().isDisplayed());
 	}

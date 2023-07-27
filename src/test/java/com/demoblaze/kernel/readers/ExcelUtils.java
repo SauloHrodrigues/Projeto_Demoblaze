@@ -21,7 +21,6 @@ public class ExcelUtils {
 	private int totalColunas;
 	private File arquivo;
 	
-	
 	public ExcelUtils() {
 		configuracoes = new ConfigurationProprerties();
 	}
@@ -29,18 +28,20 @@ public class ExcelUtils {
 	//metodo setar o arquivo (abre o arquivo)
 	private void setArquivoExcel(String sNomeDaAbaDaPlanilha ) {  
 		arquivo = new File(configuracoes.getBaseDados()); 
-		 
 		planilha = null;
+		
 		try {
 			planilha = new FileInputStream(arquivo);
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException("Arquivo não encontrado: " + arquivo.getAbsolutePath(), e);
 		} 
+
 		try {
 			pastaDeTrabalho = new HSSFWorkbook(planilha);
 		} catch (IOException e) {
 			throw new RuntimeException("Arquivo não encontrado: " + arquivo.getAbsolutePath(), e);
 		}
+		
 		abaPlanilha = pastaDeTrabalho.getSheet(sNomeDaAbaDaPlanilha);
 		totalRegistros = abaPlanilha.getLastRowNum();
 		totalColunas = abaPlanilha.getRow(0).getLastCellNum();	
@@ -67,20 +68,15 @@ public class ExcelUtils {
 		List<String> registro= new ArrayList<>(); 
 		
 		while (linhaRegistro < totalRegistros) {
-			if(texto.equalsIgnoreCase(getConteudoCelula(linhaRegistro, coluna))) {
-				
+			if(texto.equalsIgnoreCase(getConteudoCelula(linhaRegistro, coluna))) {		
 				for(int i=0;i<totalColunas;i++) {
 					registro.add(getConteudoCelula(linhaRegistro, i));
-					System.out.println("Teste = "+getConteudoCelula(linhaRegistro, i));
 				}
 				linhaRegistro = totalRegistros;
 				break;
 			}
-			
 			linhaRegistro++;
 		}	
-		
 		return registro;	
 	}
-	
 }

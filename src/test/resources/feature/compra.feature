@@ -1,7 +1,6 @@
 #language: pt
 Funcionalidade: efetivar compra no site 'demoblaze';
 
-
  	Contexto: Fazer login
    	Dado estar no site 'https://www.demoblaze.com'
     Quando clicar no link 'Log in'

@@ -6,7 +6,6 @@ import com.demoblaze.kernel.Contexto;
 import com.demoblaze.test.pages.logout.LogoutPage;
 
 public class LogoutLogic {
-
 	private LogoutPage page;
 
 	public LogoutLogic() {

@@ -44,5 +44,4 @@ public class ConfigurationProprerties {
 		if(url01 != null) return url01;
 		else throw new RuntimeException("url not specified in the Configuracoes.properties file.");
 	}
-
 }

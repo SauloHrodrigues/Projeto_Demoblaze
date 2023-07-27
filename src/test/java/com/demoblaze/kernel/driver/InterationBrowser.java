@@ -14,12 +14,10 @@ public class InterationBrowser {
 	private WebDriverWait wait;
 	
 	public InterationBrowser() {
-		int standardTimeWait = 8;//TODO
-		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(standardTimeWait));
+		wait = new WebDriverWait(getDriver(), Duration.ofSeconds(12));
 	}
 	
 	public void toClick(WebElement element) {
-		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
 	}
 
@@ -39,6 +37,10 @@ public class InterationBrowser {
 //	*************** hoper
 	public void toHoperElementVisibility(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));	
+	}
+	
+	public void toHoperElementClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));	
 	}
 
 	public boolean elementInvisivel(WebElement element ) {

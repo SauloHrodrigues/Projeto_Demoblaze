@@ -10,11 +10,8 @@ public class IdCenariosUtils {
 	}
 	
 	private void normalizar(Scenario cenario) {
-		// tratar cenario de id 
-		String aux = cenario.getSourceTagNames().stream().filter(t -> t.startsWith("@")).findFirst().get();
-		String[] aux01 = aux.split("@");
-		id= aux01[1];	
-		System.out.println("Senario = "+id);
+		String[] aux = (cenario.getSourceTagNames().stream().filter(t -> t.startsWith("@")).findFirst().get()).split("@");
+		id= aux[1];	
 	}
 
 	public String getId() {

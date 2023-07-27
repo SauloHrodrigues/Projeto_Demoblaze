@@ -10,6 +10,8 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import com.demoblaze.kernel.Contexto;
+
 import cucumber.api.Scenario;
 
 public class Evidencia  {
@@ -23,8 +25,7 @@ public class Evidencia  {
 		int mm = data.getMinute();
 		int ss = data.getSecond();
 		String status, pasta;
-		String[] tag =(sc.getSourceTagNames().stream().filter(t->t.startsWith("@")).findFirst().get()).split("@");
-	
+		String tag = Contexto.getIdCenario();
 		TakesScreenshot screen = (TakesScreenshot) getDriver();
 		File evidencias= screen.getScreenshotAs(OutputType.FILE);
 		
@@ -40,7 +41,7 @@ public class Evidencia  {
 		try {
 			FileUtils.copyFile(evidencias, new File(
 					"evidencias"+File.separator+
-					pasta+File.separator+"ID"+"_"+tag[1]+"_"+status+"_"+dd+"_"+MM+"_"+aaaa+
+					pasta+File.separator+"ID"+"_"+tag+"_"+status+"_"+dd+"_"+MM+"_"+aaaa+
 					"_"+hh+"_"+mm+"_"+ss+".jpg"));
 		} catch (IOException e) {
 			System.out.println("Pasta \" "+pasta+" \" não encontrada! ");

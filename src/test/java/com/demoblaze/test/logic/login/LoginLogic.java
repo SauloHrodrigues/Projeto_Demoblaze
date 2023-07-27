@@ -17,22 +17,13 @@ public class LoginLogic {
 	}
 
 	public void clicarLog_in() {
-//		browserWeb().toHoperElementVisibility(page.getLinkLogIn());
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-//		browserWeb().toClick(page.getLinkLogIn());
-		browserWeb().toClickJavaScript(page.getLinkLogIn());
-		
+		browserWeb().toHoperElementVisibility(page.getLinkLogIn());
+		browserWeb().toClick(page.getLinkLogIn());	
 	}
 	
 	public void preencherUser_name() {
 		browserWeb().toHoperElementVisibility(page.getTxtUsername());
-		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());
-		
+		browserWeb().toWriter(page.getTxtUsername(), form.getUsuarioBancoDados());	
 	}
 	
 	public void preencherPass_word() {
@@ -40,8 +31,14 @@ public class LoginLogic {
 	}
 	
 	public void clicarBotaoLogin() {
-		browserWeb().toHoperElementVisibility(page.getBtnLogin());
-		browserWeb().toClickJavaScript(page.getBtnLogin());	
+		
+		browserWeb().toHoperElementClickable(page.getBtnLogin());	
+		if(page.getBtnLogin().isDisplayed()) {
+			browserWeb().toClick(page.getBtnLogin());				
+		}else {
+			browserWeb().toHoperElementClickable(page.getBtnLogin());
+			browserWeb().toClickJavaScript(page.getBtnLogin());
+		}
 		browserWeb().toHoperElementVisibility(page.getLinkNomeUser());
 	}
 	

@@ -10,7 +10,6 @@ import cucumber.api.java.pt.Quando;
 public class LoginSteps {
 	private LoginLogic logic = new LoginLogic();
 
-	
 	@Dado("^estar no site 'https://www\\.demoblaze\\.com'$")
 	public void estar_no_site_https_www_demoblaze_com() throws Throwable {
 		Contexto.acessarSite();
@@ -19,7 +18,6 @@ public class LoginSteps {
 	@Quando("^clicar no link 'Log in'$")
 	public void clicar_no_link_Log_in() throws Throwable {
 		logic.clicarLog_in();
-		
 	}
 
 	@Quando("^preencher a caixa 'Username'$")

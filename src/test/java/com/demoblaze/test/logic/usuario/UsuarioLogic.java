@@ -24,22 +24,15 @@ public class UsuarioLogic {
 		Random aleatorio = new Random();
 		int valor = aleatorio.nextInt();
 		String usuarioAleatorio = "usuario"+valor;		
-		preencherUserName(usuarioAleatorio);//TODO Futuro excel
-		
+		preencherUserName(usuarioAleatorio);		
 	}
 	public void preencherUserName(String userName) {
-//	TODO acrescentar espera
-		try {
-			Thread.sleep(1500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		browserWeb().toHoperElementVisibility(page.getTxtUserName());
 		browserWeb().toWriter(page.getTxtUserName(), userName);
 	}
 	
 	public void preencherPassWord() {
-		preencherPassWord("123");//TODO Futuro excel
+		preencherPassWord("123");
 	}
 
 	public void preencherPassWord(String passWord) {
